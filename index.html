@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>解压按键工坊 · Xlent Studio</title><meta name="description" content="定制一颗可以 3D 打印的解压按键：选形状、印文字、调配色，导出模型自己打印。"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='10' width='24' height='16' rx='6' fill='%23e5a9bd'/%3E%3Crect x='9' y='4' width='14' height='12' rx='5' fill='%23fff6e8'/%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"></head><body>
+<header><a class="brand" href="./"><span class="brandmark">X</span><div><strong>Xlent Studio</strong><small>解压按键工坊</small></div></a><div class="header-note">3D 打印小玩具 · 自己设计自己按</div><div class="header-actions"><button id="saveBtn">保存草稿</button></div></header>
+<main class="workspace">
+<section class="stage card"><div class="stage-top"><div><span class="eyebrow">YOUR CLICK</span><h1>做一颗属于你的解压按键<span>。</span></h1><p class="sub">指尖按下去，把坏心情弹走。</p></div><div class="canvas-badge"><span id="dimsLabel">—</span></div></div>
+<div class="canvas-wrap" id="canvasWrap"><div id="loading">正在准备小按键…</div></div>
+<div class="stage-actions">
+<button id="pressBtn" class="primary">试按一下</button>
+<button id="rotateBtn">转动</button>
+<button id="explodeBtn">拆开看看</button>
+<button id="frontBtn">正面</button>
+<button id="bottomBtn">看底面</button>
+</div>
+<p class="hint">点一下按键试试手感 · 拖动可以转一转 · 滚轮缩放</p>
+</section>
+<aside class="panel">
+<section class="card"><h2><span>01</span>选个形状</h2><p class="sec-sub">挑一个顺眼的，陪你放空。</p><div class="pick-row" id="shapeRow"></div></section>
+<section class="card"><h2><span>02</span>写几个字</h2><p class="sec-sub">把喜欢的字印在按键上，最多 9 个字。</p>
+<div class="text-row"><input id="textInput" maxlength="9" placeholder="比如：开心、加油" autocomplete="off"><button id="applyText" class="primary">生成文字按键</button></div>
+<div class="pick-row" id="fontRow"></div>
+<p class="hint" id="missingHint"></p></section>
+<section class="card"><h2><span>03</span>调个大小</h2><p class="sec-sub">单位都是毫米。</p>
+<label class="slider"><span>外框最长边<b id="outerVal">50 mm</b></span><input id="outerRange" type="range" min="40" max="64" step="1"></label>
+<label class="slider"><span>边角圆润<b id="cornerVal">6 mm</b></span><input id="cornerRange" type="range" min="0" max="12" step="0.5"></label>
+<label class="slider"><span>外框留边<b id="marginVal">4 mm</b></span><input id="marginRange" type="range" min="2" max="8" step="0.5"></label></section>
+<section class="card"><h2><span>04</span>配个颜色</h2><p class="sec-sub">三个零件，三种心情。</p>
+<div class="color-row">
+<label><input id="colorBase" type="color"><span>外框</span></label>
+<label><input id="colorKey" type="color"><span>按键</span></label>
+<label><input id="colorRelief" type="color"><span>浮雕</span></label>
+<button id="swapColors" class="square" title="交换外框和按键颜色">⇄</button>
+</div></section>
+<section class="card"><h2><span>05</span>顶部小浮雕</h2><p class="sec-sub">给按键加一点小喜欢。</p><div class="chip-row" id="motifRow"></div></section>
+<section class="card"><h2><span>06</span>导出打印</h2>
+<p class="sec-sub">按键需要配一颗 MX 轴体（需另购）；底座已留好 14 mm 安装孔，键帽背面有十字接口。松紧请先试打确认。</p>
+<div class="export-row">
+<button id="pngBtn" class="download"><span><strong>下载预览图</strong><small>PNG 图片</small></span><b>↓</b></button>
+<button id="mf3Btn" class="download primary"><span><strong>导出 3MF</strong><small>Bambu Studio 可用 · 三色</small></span><b>↓</b></button>
+</div>
+<p class="hint">建议：PLA · 0.4 mm 喷嘴 · 0.2 mm 层高。模型未经实物试打，请先切片检查。</p></section>
+</aside>
+</main>
+<footer><span>Xlent Studio · 解压按键工坊</span><span>按一按，烦恼小一点</span></footer>
+<div id="toast" role="status" hidden></div>
+<script src="app.js" defer></script></body></html>
