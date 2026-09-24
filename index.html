@@ -14,29 +14,38 @@
 </section>
 <aside class="panel">
 <section class="card"><h2><span>01</span>选个形状</h2><p class="sec-sub">挑一个顺眼的，陪你放空。</p><div class="pick-row" id="shapeRow"></div></section>
-<section class="card"><h2><span>02</span>写几个字</h2><p class="sec-sub">把喜欢的字印在按键上，最多 9 个字。</p>
+<section class="card"><h2><span>02</span>写几个字</h2><p class="sec-sub">把喜欢的字印在按键上，最多 9 个字。字会做成空心描边的轮廓字，笔画太细的字会自动保持实心。</p>
 <div class="text-row"><input id="textInput" maxlength="9" placeholder="比如：开心、加油" autocomplete="off"><button id="applyText" class="primary">生成文字按键</button></div>
 <div class="pick-row" id="fontRow"></div>
 <p class="hint" id="missingHint"></p></section>
 <section class="card"><h2><span>03</span>调个大小</h2><p class="sec-sub">单位都是毫米。</p>
-<label class="slider"><span>外框最长边<b id="outerVal">50 mm</b></span><input id="outerRange" type="range" min="40" max="64" step="1"></label>
+<label class="slider"><span>外框最长边<b id="outerVal">50 mm</b></span><input id="outerRange" type="range" min="40" max="100" step="1"></label>
 <label class="slider"><span>边角圆润<b id="cornerVal">6 mm</b></span><input id="cornerRange" type="range" min="0" max="12" step="0.5"></label>
 <label class="slider"><span>外框留边<b id="marginVal">4 mm</b></span><input id="marginRange" type="range" min="2" max="8" step="0.5"></label></section>
-<section class="card"><h2><span>04</span>配个颜色</h2><p class="sec-sub">三个零件，三种心情。</p>
+<section class="card"><h2><span>04</span>轴体安装</h2><p class="sec-sub">轴体从上方压入底座安装孔，卡扣锁定；键帽背面十字孔对准轴心压入。</p>
+<div class="chip-row" id="switchRow">
+<button class="chip active" data-switches="1">1 轴位</button>
+<button class="chip" data-switches="2">2 轴位</button>
+<button class="chip" data-switches="3">3 轴位</button>
+</div>
+<p class="hint" id="multiHint" hidden>多轴位安装：请用同一型号、同一高度的轴体；先把所有轴心同时对准，再一起压入，键帽会整体水平下压。</p>
+<label class="slider"><span>安装松紧（接口留量）<b id="fitVal">0.10 mm</b></span><input id="fitRange" type="range" min="0" max="0.3" step="0.05"></label>
+<p class="hint">往右越松、往左越紧。轴体塞不进或晃动就调这里；每格 0.05 mm。</p></section>
+<section class="card"><h2><span>05</span>配个颜色</h2><p class="sec-sub">三个零件，三种心情。</p>
 <div class="color-row">
 <label><input id="colorBase" type="color"><span>外框</span></label>
 <label><input id="colorKey" type="color"><span>按键</span></label>
-<label><input id="colorRelief" type="color"><span>浮雕</span></label>
+<label><input id="colorRelief" type="color"><span>轮廓字</span></label>
 <button id="swapColors" class="square" title="交换外框和按键颜色">⇄</button>
 </div></section>
-<section class="card"><h2><span>05</span>顶部小浮雕</h2><p class="sec-sub">给按键加一点小喜欢。</p><div class="chip-row" id="motifRow"></div></section>
-<section class="card"><h2><span>06</span>导出打印</h2>
-<p class="sec-sub">按键需要配一颗 MX 轴体（需另购）；底座已留好 14 mm 安装孔，键帽背面有十字接口。松紧请先试打确认。</p>
+<section class="card"><h2><span>06</span>顶部小浮雕</h2><p class="sec-sub">给按键加一点小喜欢。</p><div class="chip-row" id="motifRow"></div></section>
+<section class="card"><h2><span>07</span>导出打印</h2>
+<p class="sec-sub">按键需要配 MX 轴体（Cherry MX 或同规格类 MX 轴，需另购）；底座已留好 14.2 mm 安装孔，键帽背面有十字接口。3MF 里的键帽是倒着放的（免支撑好打印），打出来翻过来用就行。</p>
 <div class="export-row">
 <button id="pngBtn" class="download"><span><strong>下载预览图</strong><small>PNG 图片</small></span><b>↓</b></button>
 <button id="mf3Btn" class="download primary"><span><strong>导出 3MF</strong><small>Bambu Studio 可用 · 三色</small></span><b>↓</b></button>
 </div>
-<p class="hint">建议：PLA · 0.4 mm 喷嘴 · 0.2 mm 层高。模型未经实物试打，请先切片检查。</p></section>
+<p class="hint">建议：PLA · 0.4 mm 喷嘴 · 0.2 mm 层高。正式打印前建议先打一个小接口试片，确认底座卡扣和键帽十字孔的松紧。模型未经实物试打，不保证适配所有 MX 类轴体。</p></section>
 </aside>
 </main>
 <footer><span>Xlent Studio · 解压按键工坊</span><span>按一按，烦恼小一点</span></footer>
