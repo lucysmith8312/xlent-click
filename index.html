@@ -21,7 +21,12 @@
 <section class="card"><h2><span>03</span>调个大小</h2><p class="sec-sub">单位都是毫米。</p>
 <label class="slider"><span>外框最长边<b id="outerVal">50 mm</b></span><input id="outerRange" type="range" min="40" max="100" step="1"></label>
 <label class="slider"><span>边角圆润<b id="cornerVal">6 mm</b></span><input id="cornerRange" type="range" min="0" max="12" step="0.5"></label>
-<label class="slider"><span>外框留边<b id="marginVal">4 mm</b></span><input id="marginRange" type="range" min="2" max="8" step="0.5"></label></section>
+<label class="slider"><span>外框留边<b id="marginVal">4 mm</b></span><input id="marginRange" type="range" min="2" max="8" step="0.5"></label>
+<div class="chip-row" id="keyholeRow">
+<button class="chip active" data-keyhole="1">带钥匙孔</button>
+<button class="chip" data-keyhole="0">不带钥匙孔</button>
+</div>
+<p class="hint">钥匙孔是底座侧面的小挂耳，可以穿挂绳、钥匙圈；不带的话底座就是干净的一圈。</p></section>
 <section class="card"><h2><span>04</span>轴体安装</h2><p class="sec-sub">轴体从上方压入底座安装孔，卡扣锁定；键帽背面十字孔对准轴心压入。</p>
 <div class="chip-row" id="switchRow">
 <button class="chip active" data-switches="1">1 轴位</button>
@@ -37,7 +42,9 @@
 <label><input id="colorRelief" type="color"><span id="colorReliefLabel">轮廓字</span></label>
 <button id="swapColors" class="square" title="交换外框和按键颜色">⇄</button>
 </div></section>
-<section class="card"><h2><span>06</span>顶部小浮雕</h2><p class="sec-sub">给按键加一点小喜欢。</p><div class="chip-row" id="motifRow"></div></section>
+<section class="card"><h2><span>06</span>顶部小浮雕</h2><p class="sec-sub">给按键加一点小喜欢。</p><div class="chip-row" id="motifRow"></div>
+<label class="slider"><span>浮雕厚度<b id="reliefVal">0.8 mm</b></span><input id="reliefRange" type="range" min="0.4" max="2" step="0.1"></label>
+<p class="hint">字和图案凸起的高度；0.4 毫米以上打印才牢靠。</p></section>
 <section class="card"><h2><span>07</span>导出打印</h2>
 <p class="sec-sub">按键需要配 MX 轴体（Cherry MX 或同规格类 MX 轴，需另购）；底座已留好 14.2 mm 安装孔，键帽背面有十字接口。3MF 里的键帽是倒着放的（免支撑好打印），打出来翻过来用就行。</p>
 <div class="export-row">
