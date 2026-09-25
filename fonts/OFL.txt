@@ -90,3 +90,14 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+
+-----------------------------------------------------------
+BUNDLED FONTS (all licensed under the SIL Open Font License 1.1 above)
+-----------------------------------------------------------
+- NotoSansCJKsc-Regular.otf — Noto Sans CJK SC (Adobe/Google)
+- Studio-Bold.ttf — subset of DejaVu Sans Bold (DejaVu project)
+- Creepster-Regular.ttf — Creepster (Squarestyle), source: https://github.com/google/fonts/raw/main/ofl/creepster/Creepster-Regular.ttf
+- Nosifer-Regular.ttf — Nosifer (Typomondo), source: https://github.com/google/fonts/raw/main/ofl/nosifer/Nosifer-Regular.ttf
+- Eater-Regular.ttf — Eater (Typomondo), source: https://github.com/google/fonts/raw/main/ofl/eater/Eater-Regular.ttf
+- SnowburstOne-Regular.ttf — Snowburst One (Typomondo), source: https://github.com/google/fonts/raw/main/ofl/snowburstone/SnowburstOne-Regular.ttf
+- MysteryQuest-Regular.ttf — Mystery Quest (OmicronLab), source: https://github.com/google/fonts/raw/main/ofl/mysteryquest/MysteryQuest-Regular.ttf
