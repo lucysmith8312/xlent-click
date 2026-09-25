@@ -1,58 +1,11 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>解压按键工坊 · Xlent Studio</title><meta name="description" content="定制一颗可以 3D 打印的解压按键：选形状、印文字、调配色，导出模型自己打印。"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='10' width='24' height='16' rx='6' fill='%23e5a9bd'/%3E%3Crect x='9' y='4' width='14' height='12' rx='5' fill='%23fff6e8'/%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="brand" href="./"><span class="brandmark">X</span><div><strong>Xlent Studio</strong><small>解压按键工坊</small></div></a><div class="header-note">3D 打印小玩具 · 自己设计自己按</div><div class="header-actions"><button id="saveBtn">保存草稿</button></div></header>
-<main class="workspace">
-<section class="stage card"><div class="stage-top"><div><span class="eyebrow">YOUR CLICK</span><h1>做一颗属于你的解压按键<span>。</span></h1><p class="sub">指尖按下去，把坏心情弹走。</p></div><div class="canvas-badge"><span id="dimsLabel">—</span></div></div>
-<div class="canvas-wrap" id="canvasWrap"><div id="loading">正在准备小按键…</div></div>
-<div class="stage-actions">
-<button id="pressBtn" class="primary">试按一下</button>
-<button id="rotateBtn">转动</button>
-<button id="explodeBtn">拆开看看</button>
-<button id="frontBtn">正面</button>
-<button id="bottomBtn">看底面</button>
-</div>
-<p class="hint">点一下按键试试手感 · 拖动可以转一转 · 滚轮缩放</p>
-</section>
-<aside class="panel">
-<section class="card"><h2><span>01</span>选个形状</h2><p class="sec-sub">挑一个顺眼的，陪你放空。</p><div class="pick-row" id="shapeRow"></div></section>
-<section class="card"><h2><span>02</span>写几个字</h2><p class="sec-sub" id="textHint">把喜欢的字印在按键上，最多 9 个字。字会做成空心描边的轮廓字，笔画太细的字会自动保持实心。</p>
-<div class="text-row"><input id="textInput" maxlength="9" placeholder="比如：开心、加油" autocomplete="off"><button id="applyText" class="primary">生成文字按键</button></div>
-<div class="pick-row" id="fontRow"></div>
-<p class="hint" id="missingHint"></p></section>
-<section class="card"><h2><span>03</span>调个大小</h2><p class="sec-sub">单位都是毫米。</p>
-<label class="slider"><span>外框最长边<b id="outerVal">50 mm</b></span><input id="outerRange" type="range" min="40" max="100" step="1"></label>
-<label class="slider"><span>边角圆润<b id="cornerVal">6 mm</b></span><input id="cornerRange" type="range" min="0" max="12" step="0.5"></label>
-<label class="slider"><span>外框留边<b id="marginVal">4 mm</b></span><input id="marginRange" type="range" min="2" max="8" step="0.5"></label>
-<div class="chip-row" id="keyholeRow">
-<button class="chip active" data-keyhole="1">带钥匙孔</button>
-<button class="chip" data-keyhole="0">不带钥匙孔</button>
-</div>
-<p class="hint">钥匙孔是底座侧面的小挂耳，可以穿挂绳、钥匙圈；不带的话底座就是干净的一圈。</p></section>
-<section class="card"><h2><span>04</span>轴体安装</h2><p class="sec-sub">轴体从上方压入底座安装孔，卡扣锁定；键帽背面十字孔对准轴心压入。</p>
-<div class="chip-row" id="switchRow">
-<button class="chip active" data-switches="1">1 轴位</button>
-<button class="chip" data-switches="2">2 轴位</button>
-</div>
-<p class="hint" id="multiHint" hidden>多轴位安装：请用同一型号、同一高度的轴体；先把所有轴心同时对准，再一起压入，键帽会整体水平下压。</p>
-<label class="slider"><span>安装松紧（接口留量）<b id="fitVal">0.10 mm</b></span><input id="fitRange" type="range" min="0" max="0.3" step="0.05"></label>
-<p class="hint">往右越松、往左越紧。轴体塞不进或晃动就调这里；每格 0.05 mm。</p></section>
-<section class="card"><h2><span>05</span>配个颜色</h2><p class="sec-sub">两个零件，两种心情。</p>
-<div class="color-row">
-<label><input id="colorBase" type="color"><span>外框</span></label>
-<label><input id="colorKey" type="color"><span>按键</span></label>
-<button id="swapColors" class="square" title="交换外框和按键颜色">⇄</button>
-</div></section>
-<section class="card"><h2><span>06</span>顶部小浮雕</h2><p class="sec-sub">给按键加一点小喜欢。</p><div class="chip-row" id="motifRow"></div>
-<label class="slider"><span>浮雕厚度<b id="reliefVal">0.8 mm</b></span><input id="reliefRange" type="range" min="0.4" max="2" step="0.1"></label>
-<p class="hint">字和图案凸起的高度；0.4 毫米以上打印才牢靠。</p><p class="hint" id="duotoneHint"></p></section>
-<section class="card"><h2><span>07</span>导出打印</h2>
-<p class="sec-sub">按键需要配 MX 轴体（Cherry MX 或同规格类 MX 轴，需另购）；底座已留好 14.2 mm 安装孔，键帽背面有十字接口。3MF 里的键帽是倒着放的（免支撑好打印），打出来翻过来用就行。</p>
-<div class="export-row">
-<button id="pngBtn" class="download"><span><strong>下载预览图</strong><small>PNG 图片</small></span><b>↓</b></button>
-<button id="mf3Btn" class="download primary"><span><strong>导出 3MF</strong><small>Bambu Studio 可用 · 双色</small></span><b>↓</b></button>
-</div>
-<p class="hint">建议：PLA · 0.4 mm 喷嘴 · 0.2 mm 层高。正式打印前建议先打一个小接口试片，确认底座卡扣和键帽十字孔的松紧。模型未经实物试打，不保证适配所有 MX 类轴体。</p></section>
-</aside>
-</main>
-<footer><span>Xlent Studio · 解压按键工坊</span><span>按一按，烦恼小一点</span></footer>
-<div id="toast" role="status" hidden></div>
-<script src="app.js" defer></script></body></html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>XLENT · 咔哒工坊</title><meta name="description" content="把喜欢的文字与图案做成解压按键，支持最多九个字，下载可编辑源码与 3D 打印模型。"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='6' width='26' height='23' rx='8' fill='%235263e8'/%3E%3Crect x='6' y='2' width='20' height='21' rx='7' fill='%23ffd25e'/%3E%3C/svg%3E"><link rel="stylesheet" href="./style.css"></head><body><header><a class="brand" href="./"><span class="logo">X</span><span>XLENT <small>咔哒工坊</small></span></a><span class="header-tag">一点喜欢，握在手心。</span><nav><button id="openDesign">打开设计</button><button id="saveDesign">保存设计</button><button class="primary" id="exportTop" disabled>下载模型 ↗</button></nav></header>
+<main><aside class="left"><div class="intro"><span class="eyebrow">YOUR LITTLE CLICK</span><h1>做一颗快乐按键<span>。</span></h1><p>选个外形，放上你的专属文字。</p></div><section><h2><span>01</span> 喜欢的外形</h2><div class="shape-grid" id="shapes"><button data-shape="flower">✿<small>小花</small></button><button data-shape="round">●<small>圆圆</small></button><button data-shape="square">▢<small>键盘键</small></button><button data-shape="cloud">☁<small>云朵</small></button><button data-shape="heart">♥<small>爱心</small></button><button data-shape="text">字<small>文字形</small></button></div><div id="shapeTextPanel" hidden><label>文字形按键 <span id="shapeCount">0 / 9</span><input id="shapeText" type="text" placeholder="最多 9 个字" autocomplete="off"></label><label>排版<select id="rows"><option value="1">一行</option><option value="2">两行</option><option value="3">三行</option></select></label><p class="hint">文字会带有连接底衬，做成一整颗键帽。长文字建议分行。</p></div><button id="uploadShape" class="upload-btn">＋ 从图片提取外形</button><p class="hint">黑白图或透明底图最合适，保留最大外轮廓。</p></section>
+<section><h2><span>02</span> 大小与手感</h2><label>外框目标最长边 <output id="sizeValue"></output><input id="size" type="range" min="28" max="240" step="1"></label><div class="row"><label>外框留边 mm<input id="rim" type="number" min="2" max="7" step="0.2"></label><label>圆润程度 mm<input id="round" type="number" min="0" max="4" step="0.2"></label></div><div class="segmented"><button data-surface="flat">平面＋浮雕</button><button data-surface="puffy">柔和鼓面</button></div><div id="puffyPanel" hidden><label>鼓起高度 <output id="puffValue"></output><input id="puff" type="range" min="1" max="8" step="0.5"></label><button id="uploadDepth" class="upload-btn">导入灰度深度图</button><button id="clearDepth" class="text-btn" hidden>恢复自动鼓面</button><p class="hint">深度图白色高、黑色低；图片会铺满键帽范围。</p></div></section>
+<section><h2><span>03</span> 带着快乐出门</h2><label class="check"><input id="hanging" type="checkbox"> 加一个挂绳孔</label><div id="hangerPanel" class="row" hidden><label>位置<select id="side"><option value="right">右侧</option><option value="left">左侧</option></select></label><label>孔径 mm<input id="hole" type="number" min="3" max="8" step="0.5"></label></div></section></aside>
+<section class="stage"><div class="stage-head"><span class="eyebrow">YOUR DESIGN, IN 3D</span><div class="counter">今天的快乐 <strong id="count">0</strong> 次</div></div><div class="viewer" id="viewer"><canvas id="canvas" aria-label="解压按键 3D 预览，可拖动旋转"></canvas><div class="loading" id="loading"><span class="spinner"></span><strong>正在准备你的按键</strong><small>首次需要加载模型引擎和中文字体</small></div><div id="fallback" hidden></div><div class="preview-label"><span id="modelLabel">小花按键</span><span id="dimensions">—</span></div></div><div class="view-tools"><button id="front" class="active">正面</button><button id="under">看安装孔</button><button id="explode">拆开看看</button><button id="sound">声音：关</button><button id="saveImage" title="保存预览图片" aria-label="保存预览图片">↓ 图片</button></div><div class="press-area"><button id="press" class="press-button" disabled>咔哒一下 <span>↓</span></button><p>轻点试按 · 拖动旋转 · 滚轮缩放</p></div><div id="modelStatus" class="model-status" role="status">正在计算模型…</div><button id="autoFit" class="upload-btn" hidden>尝试放大到可安装尺寸</button></section>
+<aside class="right"><section><div class="section-heading"><h2>放一点你的喜欢</h2><span class="nine-badge">最多 9 字</span></div><div class="content-tabs"><button data-content="text">写文字</button><button data-content="motif">小图案</button><button data-content="image">传图标</button><button data-content="none">留白</button></div><div id="textPanel"><label>浮雕文字 <span id="textCount">0 / 9</span><textarea id="text" rows="2" placeholder="写下最多 9 个字"></textarea></label><div class="phrases"><button data-text="今天也要开心哦">今天也要开心哦</button><button data-text="不许内耗">不许内耗</button><button data-text="BRAYDON">BRAYDON</button></div></div><div id="motifPanel" class="motif-grid" hidden><button data-motif="heart">♥ 爱心</button><button data-motif="star">★ 星星</button><button data-motif="puck">球杆＋冰球</button><button data-motif="circle">● 圆点</button></div><div id="iconPanel" hidden><button id="uploadIcon" class="upload-btn">＋ 上传 PNG / JPG / WebP</button><p class="hint">在本机转为单色浮雕，不上传图片，不调用 AI。</p></div><p id="surfaceNote" class="hint" hidden></p><label>文字字体<select id="font"><option value="noto">中英混排 · 思源黑体</option><option value="bold">英文数字 · 粗黑体</option></select></label><div id="reliefControls"><label>图文最长边 <output id="artSizeValue"></output><input id="artSize" type="range" min="4" max="90" step="1"></label><div class="row"><label>横向 mm<input id="artX" type="number" min="-120" max="120" step="1"></label><label>纵向 mm<input id="artY" type="number" min="-120" max="120" step="1"></label></div><div class="row"><label>旋转 °<input id="artRotation" type="number" min="-180" max="180" step="5"></label><label>浮雕高度 mm<input id="reliefHeight" type="number" min="0.4" max="2" step="0.2"></label></div><button id="centerArt" class="text-btn">恢复居中</button></div></section>
+<section><h2>给快乐选个颜色</h2><div class="colors"><label><input id="baseColor" type="color"><span>外框</span></label><label><input id="capColor" type="color"><span>按键</span></label><label><input id="reliefColor" type="color"><span>浮雕</span></label></div><div class="palettes"><button data-colors="#5263e8,#ffd25e,#fffaf0" style="--a:#5263e8;--b:#ffd25e;--c:#fffaf0" aria-label="蓝黄配色"></button><button data-colors="#264b3e,#f4c7cf,#fff8e4" style="--a:#264b3e;--b:#f4c7cf;--c:#fff8e4" aria-label="绿粉配色"></button><button data-colors="#c74035,#f2eee4,#27313c" style="--a:#c74035;--b:#f2eee4;--c:#27313c" aria-label="红白配色"></button><button data-colors="#27313c,#8dcce4,#ffffff" style="--a:#27313c;--b:#8dcce4;--c:#ffffff" aria-label="黑蓝配色"></button></div></section>
+<section class="assembly"><h2>按键怎么安装 <span>MX</span></h2><label>轴体数量<select id="switches"><option value="auto">按外形自动选择</option><option value="1">1 个轴体</option><option value="2">2 个轴体</option></select></label><label>接口单边余量 <output id="toleranceValue"></output><input id="tolerance" type="range" min="0" max="0.4" step="0.05"></label><p class="hint">普通 MX 十字轴需另配。先试片，再整件打印；双轴请用同款轴体。</p><button id="coupon" class="upload-btn">下载接口试片 · 3MF</button></section></aside></main>
+<footer><span>XLENT STUDIO <i>/</i> Live · Explore · Thrive</span><span>独立实现 · 本地生成模型 · 装配试样</span></footer>
+<dialog id="exportDialog"><div class="dialog-top"><div><span class="eyebrow">MAKE IT REAL</span><h2>让快乐落到手心</h2></div><button id="closeExport" class="close" aria-label="关闭">×</button></div><p id="exportInfo"></p><button id="download3mf" class="download primary"><strong>下载 3MF 模型</strong><small>底座与键帽分开，浮雕保留位置和颜色</small></button><button id="downloadSTL" class="download"><strong>下载分件 STL · ZIP</strong><small>底座、键帽、浮雕分别导出</small></button><div class="note"><strong>打印前请先看这里</strong><p>这是通用模型，不含 Bambu 打印机或支撑预设。底座内部空腔和键帽背面凹槽需要自行选择打印方向与支撑，并检查十字盲孔能否清理。</p><p>模型包含 MX 方孔与十字接口，但尚未验证实物装配、回弹或双轴同步。先用接口试片测试松紧，再打印完整作品。</p></div></dialog>
+<dialog id="imageDialog"><div class="dialog-top"><h2 id="imageTitle">从图片提取图案</h2><button id="closeImage" class="close" aria-label="关闭">×</button></div><div class="image-previews"><img id="originalImage" alt="上传的原图"><canvas id="thresholdPreview" width="160" height="160" aria-label="识别后的黑白图"></canvas></div><label>识别阈值 <output id="thresholdValue">180</output><input id="threshold" type="range" min="20" max="245" value="180"></label><label class="check"><input id="invert" type="checkbox"> 反转黑白</label><p class="hint">深色区域会成为实体。图片仅在你的浏览器中处理；照片需先手动调到清晰轮廓。</p><button id="applyImage" class="primary">使用这个图案</button></dialog><input id="fileImage" type="file" accept="image/png,image/jpeg,image/webp" hidden><input id="fileDesign" type="file" accept=".json" hidden><div id="toast" role="status" hidden></div><script type="module" src="./app.js"></script></body></html>
