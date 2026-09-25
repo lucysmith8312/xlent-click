@@ -14,7 +14,7 @@
 </section>
 <aside class="panel">
 <section class="card"><h2><span>01</span>选个形状</h2><p class="sec-sub">挑一个顺眼的，陪你放空。</p><div class="pick-row" id="shapeRow"></div></section>
-<section class="card"><h2><span>02</span>写几个字</h2><p class="sec-sub">把喜欢的字印在按键上，最多 9 个字。字会做成空心描边的轮廓字，笔画太细的字会自动保持实心。</p>
+<section class="card"><h2><span>02</span>写几个字</h2><p class="sec-sub" id="textHint">把喜欢的字印在按键上，最多 9 个字。字会做成空心描边的轮廓字，笔画太细的字会自动保持实心。</p>
 <div class="text-row"><input id="textInput" maxlength="9" placeholder="比如：开心、加油" autocomplete="off"><button id="applyText" class="primary">生成文字按键</button></div>
 <div class="pick-row" id="fontRow"></div>
 <p class="hint" id="missingHint"></p></section>
@@ -35,7 +35,7 @@
 <div class="color-row">
 <label><input id="colorBase" type="color"><span>外框</span></label>
 <label><input id="colorKey" type="color"><span>按键</span></label>
-<label><input id="colorRelief" type="color"><span>轮廓字</span></label>
+<label><input id="colorRelief" type="color"><span id="colorReliefLabel">轮廓字</span></label>
 <button id="swapColors" class="square" title="交换外框和按键颜色">⇄</button>
 </div></section>
 <section class="card"><h2><span>06</span>顶部小浮雕</h2><p class="sec-sub">给按键加一点小喜欢。</p><div class="chip-row" id="motifRow"></div></section>
