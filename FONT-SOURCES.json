@@ -1,0 +1,200 @@
+[
+  {
+    "id": "bold",
+    "file": "Studio-Bold.ttf",
+    "label": "圆厚黑体",
+    "group": "基础字体",
+    "chinese": false
+  },
+  {
+    "id": "noto",
+    "file": "NotoSansCJKsc-Regular.otf",
+    "label": "思源黑体 · 中文 / 中英混排",
+    "group": "中文字体",
+    "chinese": true
+  },
+  {
+    "id": "chewy",
+    "file": "Chewy-Regular.ttf",
+    "label": "软糖圆字",
+    "group": "可爱卡通",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/apache/chewy/"
+  },
+  {
+    "id": "bubblegumsans",
+    "file": "BubblegumSans-Regular.ttf",
+    "label": "泡泡糖",
+    "group": "可爱卡通",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bubblegumsans/"
+  },
+  {
+    "id": "luckiestguy",
+    "file": "LuckiestGuy-Regular.ttf",
+    "label": "胖胖漫画",
+    "group": "可爱卡通",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/apache/luckiestguy/"
+  },
+  {
+    "id": "bangers",
+    "file": "Bangers-Regular.ttf",
+    "label": "漫画标题",
+    "group": "可爱卡通",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bangers/"
+  },
+  {
+    "id": "freckleface",
+    "file": "FreckleFace-Regular.ttf",
+    "label": "俏皮涂鸦",
+    "group": "可爱卡通",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/freckleface/"
+  },
+  {
+    "id": "ribeye",
+    "file": "Ribeye-Regular.ttf",
+    "label": "童话装饰",
+    "group": "可爱卡通",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ribeye/"
+  },
+  {
+    "id": "patrickhand",
+    "file": "PatrickHand-Regular.ttf",
+    "label": "随手手写",
+    "group": "手写风",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/patrickhand/"
+  },
+  {
+    "id": "schoolbell",
+    "file": "Schoolbell-Regular.ttf",
+    "label": "校园涂鸦",
+    "group": "手写风",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/apache/schoolbell/"
+  },
+  {
+    "id": "shortstack",
+    "file": "ShortStack-Regular.ttf",
+    "label": "小朋友手写",
+    "group": "手写风",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/shortstack/"
+  },
+  {
+    "id": "pacifico",
+    "file": "Pacifico-Regular.ttf",
+    "label": "甜美连笔",
+    "group": "手写风",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/pacifico/"
+  },
+  {
+    "id": "sacramento",
+    "file": "Sacramento-Regular.ttf",
+    "label": "细线签名",
+    "group": "手写风",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/sacramento/"
+  },
+  {
+    "id": "lobster",
+    "file": "Lobster-Regular.ttf",
+    "label": "复古招牌",
+    "group": "复古与节日",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lobster/"
+  },
+  {
+    "id": "amaticsc",
+    "file": "AmaticSC-Bold.ttf",
+    "label": "瘦高手绘",
+    "group": "手写风",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/amaticsc/"
+  },
+  {
+    "id": "mountainsofchristmas",
+    "file": "MountainsofChristmas-Bold.ttf",
+    "label": "圣诞童话",
+    "group": "复古与节日",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/apache/mountainsofchristmas/"
+  },
+  {
+    "id": "creepster",
+    "file": "Creepster-Regular.ttf",
+    "label": "万圣节怪趣",
+    "group": "复古与节日",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/creepster/"
+  },
+  {
+    "id": "anton",
+    "file": "Anton-Regular.ttf",
+    "label": "运动海报",
+    "group": "复古与节日",
+    "chinese": false,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/anton/"
+  },
+  {
+    "id": "zcoolkuaile",
+    "file": "ZCOOLKuaiLe-Regular.ttf",
+    "label": "站酷快乐体",
+    "group": "中文字体",
+    "chinese": true,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/zcoolkuaile/"
+  },
+  {
+    "id": "zcoolqingkehuangyou",
+    "file": "ZCOOLQingKeHuangYou-Regular.ttf",
+    "label": "站酷黄油体",
+    "group": "中文字体",
+    "chinese": true,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/zcoolqingkehuangyou/"
+  },
+  {
+    "id": "zcoolxiaowei",
+    "file": "ZCOOLXiaoWei-Regular.ttf",
+    "label": "站酷小薇体",
+    "group": "中文字体",
+    "chinese": true,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/zcoolxiaowei/"
+  },
+  {
+    "id": "mashanzheng",
+    "file": "MaShanZheng-Regular.ttf",
+    "label": "毛笔楷书",
+    "group": "中文字体",
+    "chinese": true,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/mashanzheng/"
+  },
+  {
+    "id": "zhimangxing",
+    "file": "ZhiMangXing-Regular.ttf",
+    "label": "活泼行书",
+    "group": "中文字体",
+    "chinese": true,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/zhimangxing/"
+  },
+  {
+    "id": "longcang",
+    "file": "LongCang-Regular.ttf",
+    "label": "随性手写",
+    "group": "中文字体",
+    "chinese": true,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/longcang/"
+  },
+  {
+    "id": "liujianmaocao",
+    "file": "LiuJianMaoCao-Regular.ttf",
+    "label": "自由草书",
+    "group": "中文字体",
+    "chinese": true,
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/liujianmaocao/"
+  }
+]

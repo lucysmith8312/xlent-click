@@ -7,3 +7,5 @@
 参考链接：https://hkaosfn7vg42.meoo.pub/click-click/ 。本次无法连接该在线页面；既有XLENT图案编辑器的功能继续保留。
 
 保留上传文件中的 Three.js（MIT）、Lucide（ISC）打包许可证注释；Manifold与其他依赖许可随项目及包依赖提供。字体许可位于 fonts 文件夹。旧创作器说明见 CLASSIC-README.md。
+
+新增字体的来源见 FONT-SOURCES.json，随包 fonts/*-LICENSE.txt 保留相应许可。
